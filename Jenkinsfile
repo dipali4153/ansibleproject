@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Latest Code') {
             steps {
 
-                git branch: 'main',
+                git branch: 'master',
                 url: 'https://github.com/YOUR_USERNAME/aws-ansible-project.git'
             }
         }
