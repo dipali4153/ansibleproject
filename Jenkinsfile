@@ -11,7 +11,7 @@ pipeline {
             steps {
 
                 git branch: 'master',
-                url: 'https://github.com/YOUR_USERNAME/aws-ansible-project.git'
+                url: 'https://github.com/dipali4153/ansibleproject.git'
             }
         }
 
