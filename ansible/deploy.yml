@@ -1,0 +1,25 @@
+---
+- name: Deploy Website to AWS EC2
+  hosts: web
+  become: yes
+
+  tasks:
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Copy updated website files
+      copy:
+        src: ../website/
+        dest: /var/www/html/
+        owner: www-data
+        group: www-data
+        mode: '0755'
+
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
